@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+% Definir colores personalizados
+\definecolor{darkblue}{rgb}{0.1, 0.1, 0.44}
+\definecolor{lightgray}{rgb}{0.8, 0.8, 0.8}
+
+
+
+\title{\textbf{Simulación y Optimización de un Aeropuerto}}
+\author{\textbf{Pablo de la Iglesia Otero}}
+
+\begin{document}
+
+% Portada
+\maketitle
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{airport_image.jpg} % Asegúrate de tener una imagen de aeropuerto
+\end{center}
+
+\section*{\color{darkblue}Introducción}
+
+\begin{tcolorbox}[colframe=darkblue, colback=lightgray, title=Resumen]
+    El objetivo de este trabajo es simular el funcionamiento de un aeropuerto, modelando los procesos clave que involucran la llegada y salida de aviones. Estos procesos incluyen el aterrizaje, el check-in de los pasajeros, el control de seguridad, el transporte de los pasajeros mediante tren y el despegue de los aviones. Se utiliza \texttt{SimPy}, una biblioteca de Python para modelar sistemas de eventos discretos y el algoritmo \textbf{PSO} (Particle Swarm Optimization) para optimizar la distribución de recursos y minimizar los tiempos de espera.
+\end{tcolorbox}
+
+\section{Descripción de los Procesos}
+
+El programa simula varios procesos en el aeropuerto, contribuyendo al tiempo total que un avión pasa en el sistema, desde su aterrizaje hasta el despegue. A continuación, se describen los procesos principales involucrados en la simulación:
+
+\begin{itemize}
+    \item \textbf{Avion:} El avión solicita el uso de una pista de aterrizaje, y, una vez asignada, aterriza en el aeropuerto. Se calcula el tiempo de espera hasta la autorización.
+    \item \textbf{Check-in:} El avión solicita un puesto en el área de check-in, y los pasajeros son registrados. El tiempo de espera depende de la disponibilidad de puestos y el tiempo de registro.
+    \item \textbf{Control de Seguridad:} Los pasajeros pasan por la seguridad antes de continuar con su viaje. Este proceso depende de las líneas de seguridad disponibles y el tiempo de inspección.
+    \item \textbf{Transporte en Tren:} Los pasajeros son trasladados entre áreas del aeropuerto mediante tren. El tiempo de transporte depende de la distancia y la duración del trayecto.
+    \item \textbf{Despegue:} El avión solicita la pista para despegar y, una vez asignada, se realiza el despegue.
+\end{itemize}
+
+\section{Optimización de Recursos}
+
+El trabajo también incorpora una optimización de recursos mediante el algoritmo PSO. El objetivo es encontrar la mejor combinación de recursos del aeropuerto (pistas de aterrizaje, puestos de check-in, líneas de seguridad, y trenes) para minimizar el tiempo total de espera de los aviones. El PSO simula el comportamiento de un enjambre de partículas para explorar posibles soluciones y encontrar la más eficiente.
+
+\section{Funcionamiento General del Programa}
+
+El programa comienza con la simulación de los procesos del aeropuerto, evaluando diversas combinaciones de recursos mediante un producto cartesiano. Posteriormente, el algoritmo PSO es ejecutado para encontrar la combinación óptima de recursos que minimice el tiempo de espera de los aviones. Los resultados se almacenan en un archivo CSV para su posterior análisis.
+
+\section{Resultados}
+
+Al ejecutar el programa, se obtienen los tiempos de espera para distintas configuraciones de recursos del aeropuerto. El algoritmo PSO determina la configuración más eficiente, reduciendo significativamente el tiempo de espera y mejorando la eficiencia operativa.
+
+\section{Conclusiones}
+
+Este trabajo demuestra cómo la simulación de procesos y la optimización mediante PSO son herramientas efectivas para mejorar la eficiencia de los aeropuertos. La optimización de recursos como pistas de aterrizaje, puestos de check-in, líneas de seguridad y trenes puede reducir el tiempo de espera y mejorar la experiencia de los pasajeros.
+
+\end{document}
+
+
+
+
+
